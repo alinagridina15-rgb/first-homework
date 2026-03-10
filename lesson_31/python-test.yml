@@ -1,0 +1,58 @@
+name: CI (smoke / regression / integration)
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    env:
+      PIP_CACHE_DIR: .pip-cache
+
+    steps:
+ # 1) Отримати код
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # 2) Налаштування Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'  # Вказуємо версію Python
+
+      # 3) Кешування pip залежностей
+      - name: Cache pip dependencies
+        uses: actions/cache@v2
+        with:
+          path: .pip-cache
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # 4) Встановлення залежностей
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip config set global.cache-dir $PIP_CACHE_DIR
+          pip install -r requirements.txt
+
+      # 5) Запуск smoke-тестів
+      - name: Run smoke tests
+        run: pytest -m "smoke" -q --junitxml=test-reports/smoke.xml
+
+      # 6) Запуск regression-тестів
+      - name: Run regression tests
+        run: pytest -m "regression" -q --junitxml=test-reports/regression.xml
+
+      # 7) Запуск integration-тестів
+      - name: Run integration tests
+        run: pytest -m "integration" -q --junitxml=test-reports/integration.xml
+      # 8) Завантаження звітів JUnit
+      - name: Upload JUnit test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: junit-reports
+          path: test-reports/*.xml
