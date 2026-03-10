@@ -1,0 +1,14 @@
+import os
+import requests
+
+BASE_URL = "http://127.0.0.1:8080"
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IMAGE_PATH = os.path.join(BASE_DIR, "test.jpg")
+
+with open(IMAGE_PATH, "rb") as img:
+    files = {"image": img}
+    response = requests.post(f"{BASE_URL}/upload", files=files)
+
+print("UPLOAD STATUS:", response.status_code)
+print("UPLOAD RESPONSE:", response.json())

@@ -1,0 +1,52 @@
+1. //button[text()='Sign In']
+2. //input[@name='email']
+3. //input[@name='password']
+4. //button[@type='submit']
+5. //a[text()='Garage']
+6. //a[text()='Fuel expenses']
+7. //a[text()='Instructions']
+8. //nav//a[contains(text(),'Garage')]
+9. //nav//a[contains(text(),'Fuel')]
+10. //div[@class='sidebar']//a
+11. //button[contains(@class,'btn-primary')]
+12. //button[contains(text(),'Add car')]
+13. //form//input[@type='email']
+14. //form//input[@type='password']
+15. //header//button[contains(@class,'btn')]
+16. //div[contains(@class,'modal')]//button
+17. //table//tr
+18. //table//td
+19. //div[contains(@class,'panel')]//button
+20. //nav//a[@routerlink='/panel/garage']
+21. //nav//a[@routerlink='/panel/expenses']
+22. //button[contains(text(),'Save')]
+23. //div[@class='container']//button
+24. //footer//a
+25. //div[contains(@class,'alert')]
+
+#CSS_locators
+1. button.btn-primary
+2. input[name="email"]
+3. input[name="password"]
+4. button[type="submit"]
+5. nav a
+6. nav a[href="/panel/garage"]
+7. nav a[href="/panel/expenses"]
+8. .sidebar a
+9. header button
+10. form input[type="email"]
+11. form input[type="password"]
+12. button.btn
+13. .modal button
+14. .container button
+15. table tr
+16. table td
+17. div.panel button
+18. nav a.active
+19. footer a
+20. .alert
+21. button[class*="btn"]
+22. div[class*="container"] button
+23. form button[type="submit"]
+24. header nav a
+25. div.modal-footer button
