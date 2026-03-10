@@ -1,0 +1,54 @@
+# Homework 25 — Locators for https://qauto2.forstudy.space/
+## XPath (25)
+01. //button[normalize-space(text())='Sign In']
+02. //header//a[normalize-space(text())='Home']
+03. //header//a[normalize-space(text())='Garage']
+04. //header//a[normalize-space(text())='Fuel expenses']
+05. //header//*[self::a or self::button][contains(@class,'btn') and normalize-space(text())='Sign In']
+06. //div[contains(@class,'modal-content')]//h4[normalize-space(text())='Sign in']
+07. //div[contains(@class,'modal-content')]//label[normalize-space(text())='Email']/following::input[1]
+08. //div[contains(@class,'modal-content')]//label[normalize-space(text())='Password']/following::input[1]
+09. //div[contains(@class,'modal-content')]//input[@id='signinEmail' or @name='email']
+10. //div[contains(@class,'modal-content')]//input[@id='signinPassword' or @name='password']
+11. //div[contains(@class,'modal-content')]//button[@type='button' and (normalize-space(text())='Login' or normalize-space(text())='Sign In')]
+12. //div[contains(@class,'modal-content')]//button[@aria-label='Close' or contains(@class,'close')]
+13. //a[contains(@href,'signup') and normalize-space(text())='Registration']
+14. //div[contains(@class,'garage')]//button[@id='addCarButton' or normalize-space(text())='Add car']
+15. //div[contains(@class,'modal-content')]//h4[contains(text(),'Add') and contains(text(),'car')]
+16. //div[contains(@class,'modal-content')]//select[@id='addCarBrand' or @name='brand']
+17. //div[contains(@class,'modal-content')]//select[@id='addCarModel' or @name='model']
+18. //div[contains(@class,'modal-content')]//input[@id='addCarMileage' or @name='mileage']
+19. //div[contains(@class,'modal-content')]//button[normalize-space(text())='Add' or normalize-space(text())='Save']
+20. //div[contains(@class,'garage')]//div[contains(@class,'car')][1]//a[contains(@href,'car')]
+21. //div[contains(@class,'garage')]//div[contains(@class,'car')][1]//*[self::h2 or contains(@class,'car_name')]
+22. //div[contains(@class,'garage')]//div[contains(@class,'car')][1]//button[contains(@class,'edit') or normalize-space(text())='Edit']
+23. //div[contains(@class,'garage')]//div[contains(@class,'car')][1]//button[contains(@class,'remove') or normalize-space(text())='Remove']
+24. //nav//a[contains(@href,'profile') and normalize-space(text())='Profile']
+25. //footer//a[contains(@href,'forstudy') or contains(text(),'forstudy')]
+
+## CSS (25)
+01. header a[href='/']
+02. header a[href*='garage']
+03. header a[href*='expenses']
+04. header button.btn, header a.btn
+05. div.modal-content h4
+06. div.modal-content input#signinEmail
+07. div.modal-content input#signinPassword
+08. div.modal-content button.btn-primary
+09. div.modal-content button[aria-label='Close'], div.modal-content button.close
+10. form input[name='email']
+11. form input[name='password']
+12. form button[type='submit']
+13. a[href*='signup'], a[href*='registration']
+14. div.garage button#addCarButton, div.garage button.btn-primary
+15. div.modal-content select#addCarBrand, div.modal-content select[name='brand']
+16. div.modal-content select#addCarModel, div.modal-content select[name='model']
+17. div.modal-content input#addCarMileage, div.modal-content input[name='mileage']
+18. div.modal-content button.btn-success, div.modal-content button[type='submit']
+19. div.garage div.car-item:nth-child(1) a[href*='car']
+20. div.garage div.car-item:nth-child(1) h2, div.garage div.car-item:nth-child(1) .car_name
+21. div.garage div.car-item:nth-child(1) button.edit, div.garage div.car-item:nth-child(1) button[title='Edit']
+22. div.garage div.car-item:nth-child(1) button.remove, div.garage div.car-item:nth-child(1) button[title='Remove']
+23. nav a[href*='profile']
+24. form.profile-form input#profileName, form.profile-form input[name='name']
+25. form.profile-form button[type='submit'], form.profile-form button.btn-primary
