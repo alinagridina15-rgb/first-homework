@@ -1,0 +1,1 @@
+[32mINFO    [0m test_search:conftest.py:42 AUTH -> POST http://127.0.0.1:8080/auth as test_user

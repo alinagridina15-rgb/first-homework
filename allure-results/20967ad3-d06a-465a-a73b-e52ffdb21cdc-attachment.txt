@@ -1,0 +1,1 @@
+2026-03-10 20:02:08,881 | INFO | test_search | AUTH -> POST http://127.0.0.1:8080/auth as test_user

@@ -1,0 +1,1 @@
+[33mWARNING [0m root:homework_14.py:9 Login event - Username: user, Status: expired
